@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Mon Jun  1 18:59:38 2020
 
@@ -14,12 +12,15 @@ import matplotlib.dates as mdates
 import os
 import seaborn as sn
 
+#Loading csv file
+
 os.chdir('/media/shihsir/HDD/Courses/Microclimates')
 df = pd.read_csv('Ex04.data.csv', sep=";" , header = 0, parse_dates= [0], index_col=0, na_values= -999)
 dfTm = df[['Tmax','Tmin']].resample('M').mean()
 dfRRsum = df['RR'].resample('M').sum()
 
-#Winter season
+
+#Winter season filtering. I selected Oct Nov Dec as winter. Fell free to modify months.
 
 dfwinter = df['1981':'2010']
 dfm = df['1981':'2017'].resample('M').mean()
@@ -28,6 +29,7 @@ tab['month']= tab['Date'].dt.month
 dfmJJA = tab.query('month==10 or month==11 or month==12') 
 dfmJJA = dfmJJA.set_index('Date')
 dfmJJA.drop('month',axis=1, inplace=True)
+
 
 #Anomalies calculation
 rrano = dfmJJA.RR - dfwinter.RR.mean()
@@ -38,7 +40,7 @@ dfsrc=dfmJJA.iloc[:,0:3]
 dfsrc2 = tano.iloc[:,0:2]
 
 
-#Group formation
+#Group formation. As visualization is needed to be monthly basis.
 
 dfJmean = dfsrc.groupby([pd.DatetimeIndex(dfsrc.index).month]).mean().round(1)
 rranomnth = rrano.groupby([pd.DatetimeIndex(rrano.index).month]).mean().round(1)
@@ -48,7 +50,7 @@ ranomnth =rranomnth.to_frame()
 mon = ['Oct', 'Nov', 'Dec']
 
 
-#Plot of 4 subplots
+#Plot consisting of 4 subplots
 
 fig, ax = plt.subplots(2,2, figsize=(8,6))
 
@@ -96,5 +98,9 @@ plt.show()
 """
 From the correlation  plot, it is obvious that, precipitation is very highly negative correlated with temperature.
 So when precipiation increases temperature decreses & temperature increases precipitation decreases. 
+
+Well as per definition of corr, neither Pearson nor Rank corr cofficient depicts the cause and result phenomenon. It is
+not likely that Temperature causes Rainfall or vice versa. It is more likely that when one increases another decreases and 
+vice versa. Thats what corr cofficient tells us as per statistical point of view.
 
 """
