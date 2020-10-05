@@ -12,6 +12,4 @@ I am always happy to discuss and share. Knowledge is something that is meant to 
 Each moment is something new. Settle down and enjoy the nature. It will definitely take you somewhere.
 In a world where you can take any side, take nature's.
 
-All the exercises and data provided here are taken from Dr. Katija Trachte's https://www.b-tu.de/fg-meteorologie/team/prof-dr-katja-trachte teaching materials. These are my course assignments I delivered. Use of these for learning and teaching are highly appriciated. 
-
 Shahadat Hossain Shishir
