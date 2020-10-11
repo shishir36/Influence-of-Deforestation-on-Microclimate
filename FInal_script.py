@@ -3,6 +3,10 @@
 Created on Sat Sep  5 14:21:38 2020
 
 @author: Shahadat Hossain , 3847363
+
+Climate data from Eddy-Covariance system are analyzed further to understand the effect of deforestration on local microclimate. 
+Both csv & netcdf format data are handled through this project.
+
 """
 
 import matplotlib.pyplot as plt
