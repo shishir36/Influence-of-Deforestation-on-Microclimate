@@ -1,6 +1,6 @@
 # Influence of deforestation on microclimatological conditions during a dry period in the mountain rain forest
 
-The aim of this is to determine the microclimatological conditions along a land use gradient in the Andes mountain rain forest in South Ecuador in a height level of approximately 2000m using the observational data obtained at the two eddy-covariance stations. 
+The aim of this is to determine the microclimatological conditions along a land use gradient of the study area in a height level of approximately 2000m using the observational data obtained at the two eddy-covariance stations. 
 
 ## Data
 
